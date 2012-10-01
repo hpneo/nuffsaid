@@ -1,0 +1,115 @@
+$blue: #315690;
+$menu-start: rgba(38, 38, 38, 0.8);
+$menu-end: rgba(17, 17, 17, 0.8);
+
+$header-start: #3b68ae;
+$header-end: #335a98;
+$button-blue-start: #315690;
+$button-blue-end: #294879;
+$button-green-start: #31904f;
+$button-green-end: #26723f;
+$button-red-start: #903b31;
+$button-red-end: #722e26;
+$button-yellow-start: #908c31;
+$button-yellow-end: #726f26;
+$button-black-start: #262626;
+$button-black-end: #111111;
+
+html, body {
+  font-family: "Source Sans Pro";
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: $blue;
+  text-decoration: none;
+}
+
+header {
+  @include linear-gradient($header-start, $header-end);
+  overflow: hidden;
+
+  a {
+    color: lighten($blue, 50%);
+    text-shadow: -1px -1px 1px darken($blue, 20%);
+  }
+
+  h1, nav {
+    display: block;
+    float: left;
+    line-height: 40px;
+    margin: 0 12px;
+  }
+
+  nav.right {
+    float: right;
+  }
+
+  a.button {
+    @include border-radius(3px);
+    margin: 0 6px;
+    padding: 4px 8px;
+    text-shadow: -1px -1px 1px #212121;
+
+    &.blue {
+      @include linear-gradient($button-blue-start, darken($button-blue-end, 2%));
+      border: 1px solid darken($button-blue-end, 8%);
+      @include box-shadow (inset 0 1px 0 0 lighten($button-blue-end, 15%));
+    }
+
+    &.green {
+      @include linear-gradient($button-green-start, darken($button-green-end, 2%));
+      border: 1px solid darken($button-green-end, 8%);
+      @include box-shadow (inset 0 1px 0 0 lighten($button-green-end, 15%));
+    }
+
+    &.red {
+      @include linear-gradient($button-red-start, darken($button-red-end, 2%));
+      border: 1px solid darken($button-red-end, 8%);
+      @include box-shadow (inset 0 1px 0 0 lighten($button-red-end, 15%));
+    }
+
+    &.yellow {
+      @include linear-gradient($button-yellow-start, darken($button-yellow-end, 2%));
+      border: 1px solid darken($button-yellow-end, 8%);
+      @include box-shadow (inset 0 1px 0 0 lighten($button-yellow-end, 15%));
+    }
+  }
+
+  .menu {
+    right: 16px;
+    line-height: 1;
+    position: absolute;
+    margin: 0;
+    padding: 3px;
+    list-style: none;
+    background: rgba(17, 17, 17, 0.85);
+    @include border-radius(3px);
+    @include linear-gradient($menu-start, darken($menu-end, 2%));
+    border: 1px solid darken($menu-end, 8%);
+    @include box-shadow (inset 0 1px 0 0 lighten($menu-end, 15%));
+
+    li {
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      color: #ccc;
+      display: block;
+      padding: 5px 20px;
+      text-shadow: -1px -1px 1px #212121;
+      @include border-radius(2px);
+
+      &:hover {
+        background: lighten($menu-end, 20%);
+      }
+    }
+  }
+}

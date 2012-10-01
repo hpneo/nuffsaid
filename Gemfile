@@ -7,13 +7,22 @@ gem 'mysql2'
 gem 'pg', :group => :production
 
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
 
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'haml'
+gem 'haml-rails'
 gem 'jquery-rails'
+gem 'sass-rails'
+gem 'bourbon'
+
+gem 'quiet_assets'
+
+gem 'inherited_resources', '< 1.3.0'
+
+gem 'simple_form'
 
 gem 'devise'
 gem 'omniauth'
